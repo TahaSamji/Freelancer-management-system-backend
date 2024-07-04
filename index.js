@@ -24,6 +24,10 @@ app.use(express.urlencoded({ extended: false }));
     }
 })()
 
+app.get("/",(req,res)=>{
+    res.json("Hello");
+})
+
 // Manually create Super Admin in the database
 async function createSuperAdmin() {
     const superAdmin = await User.findOne({utype: 'Super Admin'});
