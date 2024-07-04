@@ -9,11 +9,15 @@ var app = express();
 
 app.use(cors({
     origin:["https://freelancer-management-system-frontend-59pih067e.vercel.app"],
-    methods :["POST","GET"],
-    credentials:true
+    methods :["POST","GET","DELETE","PUT"],
+    credential:true
 }
 ));
-
+app.options("",cors({
+    origin:["https://freelancer-management-system-frontend-59pih067e.vercel.app"],
+    methods :["POST","GET","DELETE","PUT"],
+    credential:true
+}))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 //localhost:27017
