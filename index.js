@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 //localhost:27017
 (async () => {
     try {
-        await mongoose.connect("mongodb://localhost:27017/test")
+        await mongoose.connect("mongodb+srv://msamji25186:vcErGiQYRxWRw2zZ@cluster0.6sdkyyf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
         console.log('Connection has been established successfully.');
     } catch (error) {
         console.error('Unable to connect to the database:', error);
