@@ -1,3 +1,4 @@
+require("dotenv").config();
 var createError = require("http-errors");
 var express = require("express");
 const mongoose = require("mongoose");
@@ -12,12 +13,13 @@ app.use(cors({
     credentials:true
 }
 ));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 //localhost:27017
 (async () => {
     try {
-        await mongoose.connect("mongodb+srv://msamji25186:vcErGiQYRxWRw2zZ@cluster0.6sdkyyf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+        await mongoose.connect(`mongodb+srv://${process.env.Mongo_username}:${process.env.Mongo_password}@cluster0.6sdkyyf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
         console.log('Connection has been established successfully.');
     } catch (error) {
         console.error('Unable to connect to the database:', error);
