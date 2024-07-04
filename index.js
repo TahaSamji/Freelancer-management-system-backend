@@ -6,7 +6,12 @@ const User = require("./models/User");
 const cors = require("cors");
 var app = express();
 
-app.use(cors());
+app.use(cors({
+    origin:["https://freelancer-management-system-frontend-59pih067e.vercel.app"],
+    methods :["POST","GET"],
+    credentials:true
+}
+));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 //localhost:27017
